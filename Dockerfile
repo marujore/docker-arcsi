@@ -1,4 +1,4 @@
-FROM continuumio/miniconda3:latest
+FROM continuumio/miniconda2:latest
 
 LABEL authors="Angelos Tzotsos,Markus Neteler"
 LABEL maintainer="neteler@mundialis.de"
@@ -8,7 +8,7 @@ LABEL maintainer="neteler@mundialis.de"
 RUN conda update -n base conda
 RUN conda config --add channels conda-forge && \
 conda update --yes conda && \
-conda install --yes python=3.7 arcsi cgal && \
+conda install --yes python=2.7 arcsi=3.1.6 gdal=2.4.2 cgal && \
 conda clean --yes -t
 
 ## Ugly fixes for dependency versions
