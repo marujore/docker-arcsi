@@ -7,9 +7,8 @@ LABEL maintainer="neteler@mundialis.de"
 # update conda and install arcsi using conda package manager and clean up (rm tar packages to save space)
 RUN conda update -n base conda
 RUN conda config --add channels conda-forge && \
-conda config --add channels au-eoed && \
 conda update --yes conda && \
-conda install --yes python=3.7 arcsi && \
+conda install --yes python=3.7 arcsi cgal && \
 conda clean --yes -t
 
 ## Ugly fixes for dependency versions
